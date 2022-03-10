@@ -11,10 +11,18 @@ module App
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
         # 追加
-    # Railsアプリデフォルトのタイムゾーン(default 'UTC')
-    # TimeZoneList: http://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html
-    # config.time_zone = ENV["TZ"]
+    # Railsアプリのタイムゾーン(default 'UTC')
     config.time_zone = 'Tokyo'
+    # データベースの読み書きに使用するタイムゾーン(:local | :utc(default))
+    config.active_record.default_timezone = :local
+
+    # i18nで使われるデフォルトのロケールファイルの指定(default :en)
+    config.i18n.default_locale = :ja
+
+    # $LOAD_PATHにautoload pathを追加しない(Zeitwerk有効時false推奨)
+    config.add_autoload_paths_to_load_path = false
+
+    # config.autoload_paths += %W(#{config.root}/lib)
     config.api_only = true
   end
 end
