@@ -10,6 +10,17 @@ module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+
+    config.generators do |g|
+      # css,jsのファイルは作成せず
+      g.assets false
+      # コントローラー作成時にconfig/routes.rbが書き換えられないようにする。
+      # g.skip_routes false
+      # テストファイルは作成せず
+      g.test_framework false
+      # ヘルパーファイルも作成せず
+      g.helper false
+    end
         # 追加
     # Railsアプリのタイムゾーン(default 'UTC')
     config.time_zone = 'Tokyo'
