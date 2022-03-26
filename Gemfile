@@ -66,3 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb', '~> 0.7.3'
 # コンソール文字列補正 Doc: https://github.com/steakknife/hirb-unicode
 gem 'hirb-unicode-steakknife', '~> 0.0.9'
+# JWT Doc: https://github.com/jwt/ruby-jwt
+gem 'jwt', '~> 2.2'
