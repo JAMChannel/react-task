@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :password_digest, null: false
       t.boolean :activated, null: false, default: false
       t.boolean :admin, null: false, default: false
+      t.string :refresh_jti
       t.timestamps
     end
   end

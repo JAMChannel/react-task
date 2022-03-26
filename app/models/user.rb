@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include TokenGenerateService
    # gem bcrypt
    # パスワードを暗号化
    # password_digestをpasswordとできる
@@ -24,4 +25,20 @@ class User < ApplicationRecord
                            message: :invalid_password
                          },
                          allow_nil: true
+
+  def remember(jti)
+    update!(refresh_jti: jti)
+  end
+
+  def forget
+    update!(refresh_jti: nil)
+  end
+
+  def response_json(payload = {})
+    as_json(only: [id, name]).merge(payload).with_indifferent_access
+  end
+
+
+
+
 end

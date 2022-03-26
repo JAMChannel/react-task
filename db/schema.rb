@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_11_093618) do
     t.string "password_digest", null: false
     t.boolean "activated", default: false, null: false
     t.boolean "admin", default: false, null: false
+    t.string "refresh_jti"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
